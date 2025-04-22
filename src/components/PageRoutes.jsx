@@ -2,7 +2,7 @@ import React from 'react';
 
 import About from "./About";
 import Contact from "./Contact";
-import Projects from "./Projects";
+import Projects from "./projects/Projects";
 import Resume from "./Resume";
 
 import { Routes, Route} from "react-router-dom";

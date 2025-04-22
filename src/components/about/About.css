@@ -1,0 +1,20 @@
+/* Apply scrollbar styles ONLY to About page */
+.about-page .custom-scrollbar::-webkit-scrollbar {
+    height: 8px; /* Scrollbar thickness */
+  }
+  
+  .about-page .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Track color */
+    border-radius: 10px;
+  }
+  
+  .about-page .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #4a65de, #352bb9); /* Green gradient */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .about-page .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #2248c5, #2d2baa); /* Darker on hover */
+  }
+  

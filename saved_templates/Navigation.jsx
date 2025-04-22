@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route, useNavigate} from "react-router-dom";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ViewTimelineOutlinedIcon from '@mui/icons-material/ViewTimelineOutlined';
@@ -13,14 +13,10 @@ const Navigation = () => {
     { name: "Projects", path: "/projects", icon: FolderZipOutlinedIcon, dis: "translate-x-32" },
     { name: "Contact", path: "/contact", icon: ContactMailOutlinedIcon, dis: "translate-x-48" },
   ];
+
   const navigate = useNavigate();
+  
   const [active, setActive] = useState(0);
-
-  useEffect(()=>{
-      
-  navigate("/about")
-  },[]);
-
 
   const showTabs = (e, path, i) => {
     setActive(i);
@@ -35,20 +31,17 @@ const Navigation = () => {
     <div className="bg-white max-h-[4.4rem] px-6 rounded-t-xl ">
       <ul className="flex relative">
         <span
-          className={`bg-blue-700 duration-500 ${Menus[active].dis} border-4 border-black h-16 w-16 absolute
-         -bottom-6 rounded-full`}
+          className={`bg-rose-600 duration-500 ${Menus[active].dis} border-4 border-gray-900 h-16 w-16 absolute
+         -top-5 rounded-full`}
         >
-          {/* Bottom-Left Quarter Curve */}
-        <span
-          className="w-3.5 h-3.5 bg-transparent absolute bottom-5 -right-[18px] 
-            rounded-bl-[11px] shadow-myShadow4"
-        ></span>
-
-        {/* Bottom-Right Quarter Curve */}
-        <span
-          className="w-3.5 h-3.5 bg-transparent absolute bottom-5 -left-[18px] 
-            rounded-br-[11px] shadow-myShadow3"
-        ></span>
+          <span
+            className="w-3.5 h-3.5 bg-transparent absolute top-4 -left-[18px] 
+          rounded-tr-[11px] shadow-myShadow1"
+          ></span>
+          <span
+            className="w-3.5 h-3.5 bg-transparent absolute top-4 -right-[18px] 
+          rounded-tl-[11px] shadow-myShadow2"
+          ></span>
 
           {React.createElement(Menus[active].icon, { className: "text-white text-2xl ml-4 mt-4" })}
         </span>
@@ -56,12 +49,12 @@ const Navigation = () => {
         {Menus.map((menu, i) => (
           <li key={i} className="w-16 ">
             <button
-              className="flex flex-col text-center pt-4 focus:outline-none"
+              className="flex flex-col text-center pt-6 focus:outline-none"
               onClick={(e) => showTabs(e,menu.path, i)}
             >
               <span
-                className={`text-xl cursor-pointer  duration-500 ${
-                  i === active ? "translate-y-16 text-white opacity-0" : "-translate-y-0 opacity-100"
+                className={`text-xl cursor-pointer duration-500 ${
+                  i === active && "-mt-6 text-white"
                 }`}
               >
                 {React.createElement(menu.icon)}
@@ -69,13 +62,12 @@ const Navigation = () => {
               <span
                 className={` ${
                   active === i
-                    ? "-translate-y-10 duration-700 opacity-100  ml-2" // Moves to normal position
-                    : "-translate-y-16 opacity-0 ml-2" // Starts from above (-10px)
+                    ? "translate-y-4 duration-700 opacity-100 ml-2"
+                    : "opacity-0 translate-y-10 ml-2"
                 } `}
               >
                 {menu.name}
               </span>
-
             </button>
           </li>
         ))}

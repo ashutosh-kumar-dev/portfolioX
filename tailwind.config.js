@@ -4,8 +4,10 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        myShadow1: "4.1px -5px 0 0 rgb(17,24,39)",
-        myShadow2: "-4.1px -5px 0 0 rgb(17,24,39)",
+        myShadow1: "4.1px -5px 0 0 rgb(3, 4, 5)",
+        myShadow2: "-4.1px -5px 0 0 rgb(3, 4, 5)",
+        myShadow3: "4.1px 5px 0 0 rgb(3, 4, 5)",   // Bottom Right
+  myShadow4: "-4.1px 5px 0 0 rgb(3, 4, 5)",  // Bottom Left
       },
     },
   },
