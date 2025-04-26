@@ -1,11 +1,26 @@
 import React from "react";
 import LeetCodeHeatmap from "./about/LeetCodeHeatmap";
 import SkillShowcase from "./skill/SkillShowcase";
+import ProfileCard from "./profileCard/ProfileCard"; // Import your ProfileCard here
+
 import "./about/About.css"
 
 const About = () => {
   return (
     <div className="about-page w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8">
+
+      {/* Profile + About Layout */}
+      <div className="w-full max-w-6xl flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10">
+       {/* Profile Card */}
+       <div className=" lg:block lg:w-[350px] sticky top-24 h-fit">
+       <ProfileCard />
+       </div>
+       <div className="w-full lg:w-[calc(100%-400px)] max-h-[calc(100vh-6rem)] overflow-y-auto pr-2 space-y-10">
+
+
+       
+
+       <div className="w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8">
       
       {/* About Section Card */}
       <div className="w-full max-w-4xl bg-gray-900/80 backdrop-blur-lg border border-gray-700 rounded-2xl flex flex-col items-center text-white p-10 shadow-lg shadow-gray-800">
@@ -61,6 +76,11 @@ const About = () => {
             <LeetCodeHeatmap />
           </div>
         </div>
+      </div>
+
+      </div>
+      </div>
+      
       </div>
 
      

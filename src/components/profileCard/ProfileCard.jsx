@@ -11,7 +11,8 @@ export default function ProfileCard() {
 
   return (
     <div
-      className={`relative w-[350px] h-[450px] bg-white rounded-[20px] shadow-2xl transition-all duration-500 ${
+      className={`relative w-[350px] h-[450px] bg-gradient-to-tr from-green-300 via-blue-300 to-purple-400
+ rounded-[20px] shadow-2xl transition-all duration-500 ${
         isHovered ? "h-[450px]" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -21,7 +22,7 @@ export default function ProfileCard() {
       <div
         className={`absolute left-1/2 transform -translate-x-1/2 ${
           isHovered ? "w-[250px] h-[250px]" : "w-[150px] h-[150px]"
-        } top-[-50px] bg-white rounded-[20px] shadow-xl overflow-hidden transition-all duration-500`}
+        } top-[-50px] bg-gradient-to-tr from-green-300 via-blue-300 to-purple-400  rounded-[20px] shadow-xl overflow-hidden transition-all duration-500`}
       >
         <img
           src={myImage} // Change this to your image path
@@ -36,10 +37,10 @@ export default function ProfileCard() {
           className={`p-10 text-center w-full transition-transform duration-500 `}
         >
           {/* Name and Title */}
-          <h2 className="text-2xl md:text-2xl font-semibold text-gray-700">
+          <h2 className="text-2xl md:text-2xl font-semibold text-blue-950">
             Ashutosh Kumar
             <br />
-            <span className="text-base md:text-lg font-medium opacity-50">
+            <span className="text-base md:text-lg font-medium opacity-40">
               Web Developer
             </span>
           </h2>
@@ -48,15 +49,15 @@ export default function ProfileCard() {
           {/* Stats */}
           <div className="flex justify-center my-5 space-x-4 md:space-x-6">
             <IconButton onClick={() => window.open(import.meta.env.VITE_GITHUB_URL, "_blank")}>
-              <GitHubIcon fontSize="large" color="action" />
+              <GitHubIcon className="text-blue-950" fontSize="large"  />
             </IconButton>
 
             <IconButton onClick={() => window.open(`mailto:${import.meta.env.VITE_EMAIL_URL}`)}>
-              <EmailIcon fontSize="large" color="action" />
+              <EmailIcon fontSize="large" className="text-blue-950" />
             </IconButton>
 
             <IconButton onClick={() => window.open(import.meta.env.VITE_LINKEDIN_URL, "_blank")}>
-              <LinkedInIcon fontSize="large" color="action" />
+              <LinkedInIcon fontSize="large" className="text-blue-950" />
             </IconButton>
           </div>
 

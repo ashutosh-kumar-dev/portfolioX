@@ -4,7 +4,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ViewTimelineOutlinedIcon from '@mui/icons-material/ViewTimelineOutlined';
 import FolderZipOutlinedIcon from '@mui/icons-material/FolderZipOutlined';
 import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
-import PageRoutes from "../PageRoutes";
+import PageRoutes from "../src/components/PageRoutes";
 
 const Navigation = () => {
   const Menus = [
