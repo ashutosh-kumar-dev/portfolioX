@@ -16,6 +16,9 @@ module.exports = {
         kalam: ['Kalam', 'cursive'],
 
       },
+      screens: {
+        'xxxs': '480px', //custom 480px breakpoint!
+      }
     },
   },
   plugins: [],

@@ -8,10 +8,10 @@ import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
 
 const Navigation = () => {
   const Menus = [
-    { name: "About", path: "/about", icon: PersonOutlineIcon, dis: "translate-x-[55%]" },
-    { name: "Resume", path: "/resume", icon: ViewTimelineOutlinedIcon, dis: "translate-x-[220%]" },
-    { name: "Projects", path: "/projects", icon: FolderZipOutlinedIcon, dis: "translate-x-[370%]" },
-    { name: "Contact", path: "/contact", icon: ContactMailOutlinedIcon, dis: "translate-x-[525%]" },
+    { name: "About", path: "/about", icon: PersonOutlineIcon, dis: "translate-x-[0px] sm:translate-x-[65px] md:translate-x-[80px] lg:translate-x-[10px] xl:translate-x-[15px] " },
+    { name: "Resume", path: "/resume", icon: ViewTimelineOutlinedIcon, dis: "translate-x-[65px] sm:translate-x-[195px] md:translate-x-[230px] lg:translate-x-[80px] xl:translate-x-[100px]" },
+    { name: "Projects", path: "/projects", icon: FolderZipOutlinedIcon, dis: "translate-x-[135px] sm:translate-x-[325px] md:translate-x-[370px] lg:translate-x-[155px] xl:translate-x-[180px]" },
+    { name: "Contact", path: "/contact", icon: ContactMailOutlinedIcon, dis: "translate-x-[200px] sm:translate-x-[455px] md:translate-x-[515px] lg:translate-x-[230px] xl:translate-x-[260px]" },
   ];
   const navigate = useNavigate();
   const [active, setActive] = useState(0);
@@ -47,11 +47,11 @@ const Navigation = () => {
         {/* Right side: navbar */}
         <div className="fixed w-full lg:w-[35%] flex flex-col justify-end z-50 bottom-0 left-0 top-auto lg:right-0 lg:top-0 lg:bottom-auto lg:left-auto">
           <div className="bg-white h-[4.4rem] px-6 rounded-t-xl rounded-b-xl">
-            <ul className="flex flex-col ">
+            <ul className="flex flex-col relative ">
               {/* Active Bubble */}
               <span
                 className={`bg-blue-700 duration-500 ${Menus[active].dis} border-4 border-black h-16 w-16 absolute
-    top-auto bottom-auto -top-5 md:-top-5 lg:top-auto lg:-bottom-6 rounded-full`}
+                             bottom-auto -top-5 md:-top-5 md:bottom-auto lg:top-auto lg:-bottom-6 rounded-full`}
               >
                 {/*active bubble lower shade */}
                 <span className="w-3.5 h-3.5 bg-transparent absolute 
@@ -68,9 +68,9 @@ const Navigation = () => {
               </span>
     
               {/* Menu Buttons */}
-              <div className="overflow-hidden flex mb-50">
+              <div className=" overflow-hidden flex mb-50">
                 {Menus.map((menu, i) => (
-                  <li key={i} className="w-16 ml-[4%]">
+                  <li key={i} className="w-16 sm:ml-16 md:ml-20 lg:ml-2 xl:ml-4">
                     <button
                       className="flex flex-col text-center pt-4 focus:outline-none"
                       onClick={(e) => showTabs(e, menu, i)}
