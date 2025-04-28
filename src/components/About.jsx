@@ -7,21 +7,22 @@ import "./about/About.css"
 
 const About = () => {
   return (
-    <div className="about-page w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8 overflow-x-hidden">
-
-  {/* Layout Container */}
-  <div className="w-full flex flex-col lg:flex-row items-start justify-center gap-10 lg:max-w-6xl">
-
-    {/* Profile Card */}
-    <div className="hidden lg:block lg:w-[350px] sticky top-24 self-start pt-20 ">
-      <ProfileCard />
-    </div>
-
-    {/* About Content */}
-    <div className="w-full flex flex-col items-center justify-center space-y-10">
-      
-      {/* About Section Card */}
-      <div className="w-full max-w-4xl bg-gray-900/80 backdrop-blur-lg border border-gray-700 rounded-2xl flex flex-col items-center text-white p-10 shadow-lg shadow-gray-800">
+  
+      <div className="about-page w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8">
+  
+    {/* Layout Container */}
+    <div className="w-full max-w-6xl flex flex-col lg:flex-row items-start justify-center gap-10 ">
+  
+      {/* Profile Card */}
+      <div className=" lg:block lg:w-[350px] sticky pt-20 top-24 self-start">
+        <ProfileCard />
+      </div>
+  
+      {/* About Content */}
+      <div className="w-full flex flex-col items-center justify-center space-y-10">
+        
+        {/* About Section Card */}
+        <div className="w-full max-w-4xl bg-gray-900/80 backdrop-blur-lg border border-gray-700 rounded-2xl flex flex-col items-center text-white p-10 shadow-lg shadow-gray-800">
         
         {/* About Heading */}
         <h2 className="text-4xl font-bold">About Me</h2>
