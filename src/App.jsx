@@ -21,10 +21,10 @@ function App() {
       </div>
 
 
-      {/* Scrollable Content
-      <div className="mt-[4.4rem] overflow-y-auto flex-1">
+      {/* Scrollable Content */}
+      <div className="mt-[4.4rem]  ">
         <PageRoutes />
-      </div> */}
+      </div>
     </div>
   );
 }

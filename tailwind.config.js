@@ -18,7 +18,21 @@ module.exports = {
       },
       screens: {
         'xxxs': '480px', //custom 480px breakpoint!
-      }
+      },
+      animation: {
+        pullRope: 'pullRope 2s ease-out forwards',
+        lightOn: 'lightOn 2s ease-out forwards'
+      },
+      keyframes: {
+        pullRope: {
+          '0%': { height: '0', opacity: '0' },
+          '100%': { height: '100px', opacity: '1' }
+        },
+        lightOn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        }
+      },
     },
   },
   plugins: [],

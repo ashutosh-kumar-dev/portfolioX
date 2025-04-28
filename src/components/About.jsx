@@ -7,20 +7,18 @@ import "./about/About.css"
 
 const About = () => {
   return (
-    <div className="about-page w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8">
+    <div className="about-page w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8 overflow-x-hidden">
 
-      {/* Profile + About Layout */}
-      <div className="w-full max-w-6xl flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10">
-       {/* Profile Card */}
-       <div className=" lg:block lg:w-[350px] sticky top-24 h-fit">
-       <ProfileCard />
-       </div>
-       <div className="w-full lg:w-[calc(100%-400px)] max-h-[calc(100vh-6rem)] overflow-y-auto pr-2 space-y-10">
+  {/* Layout Container */}
+  <div className="w-full flex flex-col lg:flex-row items-start justify-center gap-10 lg:max-w-6xl">
 
+    {/* Profile Card */}
+    <div className="hidden lg:block lg:w-[350px] sticky top-24 self-start pt-20 ">
+      <ProfileCard />
+    </div>
 
-       
-
-       <div className="w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8">
+    {/* About Content */}
+    <div className="w-full flex flex-col items-center justify-center space-y-10">
       
       {/* About Section Card */}
       <div className="w-full max-w-4xl bg-gray-900/80 backdrop-blur-lg border border-gray-700 rounded-2xl flex flex-col items-center text-white p-10 shadow-lg shadow-gray-800">
@@ -35,14 +33,14 @@ const About = () => {
         </p>
 
         <ul className="text-left text-base opacity-80 mt-4 space-y-2">
-  <li>🕵️‍♂️ <b>Bug detective by night</b> – Squashed more bugs than a windshield on a highway (with style, of course).</li>
-  <li>💼 <b>Interned at OpenText & Micro Focus</b></li>
-  <li>💻 <b>Tech Stack:</b> React, Node.js, MongoDB, Spring Boot – If it runs on the web, I’ve probably built or broken it (on purpose, for testing 😉).</li>
-  <li>🔥 <b>Believer in clean code, automation, and the power of Ctrl+Z.</b></li>
-  <li>🏋️‍♂️ <b>Outside code:</b> Catch me at the gym pretending I know what I’m doing or Googling errors like a pro.</li>
-</ul>
+          <li>🕵️‍♂️ <b>Bug detective by night</b> – Squashed more bugs than a windshield on a highway (with style, of course).</li>
+          <li>💼 <b>Interned at OpenText & Micro Focus</b></li>
+          <li>💻 <b>Tech Stack:</b> React, Node.js, MongoDB, Spring Boot – If it runs on the web, I’ve probably built or broken it (on purpose, for testing 😉).</li>
+          <li>🔥 <b>Believer in clean code, automation, and the power of Ctrl+Z.</b></li>
+          <li>🏋️‍♂️ <b>Outside code:</b> Catch me at the gym pretending I know what I’m doing or Googling errors like a pro.</li>
+        </ul>
 
-<p className="text-center text-base mt-4 opacity-80"><i><b>Let’s team up and build something awesome – or at least something that doesn’t throw a 500 error! 😄🚀</b></i></p>
+        <p className="text-center text-base mt-4 opacity-80"><i><b>Let’s team up and build something awesome – or at least something that doesn’t throw a 500 error! 😄🚀</b></i></p>
 
       </div>
 
@@ -67,19 +65,19 @@ const About = () => {
       </div>
 
       {/* LeetCode Heatmap Section with Scrollable & Styled Scrollbar */}
-      <div className="w-full max-w-4xl bg-gray-900/80 backdrop-blur-lg border border-gray-700 rounded-2xl flex flex-col items-center p-6 shadow-lg shadow-gray-800">
+      <div className="w-full  max-w-4xl bg-gray-900/80 backdrop-blur-lg border border-gray-700 rounded-2xl flex flex-col items-center p-6 shadow-lg shadow-gray-800">
         <h2 className="text-white text-xl font-semibold mb-3">LeetCode Heatmap</h2>
         
         {/* Scrollable Container with Custom Scrollbar */}
-        <div className="w-full overflow-x-auto custom-scrollbar max-w-3xl">
-          <div className="min-w-[800px] rounded-xl">
+        <div className="w-full lg:w-[500px] xl:w-full overflow-x-auto custom-scrollbar max-w-3xl">
+          <div className="sm:min-w-[600px] md:min-w-[800px] rounded-xl">
             <LeetCodeHeatmap />
           </div>
         </div>
       </div>
 
       </div>
-      </div>
+      
       
       </div>
 

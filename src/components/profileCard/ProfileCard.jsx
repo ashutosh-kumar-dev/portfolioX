@@ -11,7 +11,7 @@ export default function ProfileCard() {
 
   return (
     <div
-      className={`relative w-[350px] h-[450px] bg-gradient-to-tr from-green-300 via-blue-300 to-purple-400
+      className={`relative w-[350px] h-[450px] bg-gradient-to-tr from-blue-500 via-blue-300 to-white
  rounded-[20px] shadow-2xl transition-all duration-500 ${
         isHovered ? "h-[450px]" : ""
       }`}
@@ -22,7 +22,7 @@ export default function ProfileCard() {
       <div
         className={`absolute left-1/2 transform -translate-x-1/2 ${
           isHovered ? "w-[250px] h-[250px]" : "w-[150px] h-[150px]"
-        } top-[-50px] bg-gradient-to-tr from-green-300 via-blue-300 to-purple-400  rounded-[20px] shadow-xl overflow-hidden transition-all duration-500`}
+        } top-[-50px] bg-gradient-to-tr from-green-300 via-blue-300 to-white  rounded-[20px] shadow-xl overflow-hidden transition-all duration-500`}
       >
         <img
           src={myImage} // Change this to your image path
@@ -36,6 +36,18 @@ export default function ProfileCard() {
         <div
           className={`p-10 text-center w-full transition-transform duration-500 `}
         >
+          {/* design divider */}
+          <div class="relative w-full max-w-[400px] my-8 mx-auto">
+            <div class="overflow-hidden h-5 relative">
+              <div class="w-full h-[25px] rounded-[125px/12px] shadow-[0_0_8px_#886fac] mt-[-25px]"></div>
+            </div>
+            <span class="absolute bottom-full mb-[-20px] left-1/2 ml-[-18px] w-[36px] h-[36px] rounded-full bg-blue-500 shadow-[0_2px_4px_#ab9ac4]">
+              <i class="absolute top-[2px] right-[2px] bottom-[2px] left-[2px] rounded-full border border-dashed border-[#b7a8cd] text-center leading-[28px] not-italic text-white text-xl">
+                ✧
+              </i>
+            </span>
+          </div>
+
           {/* Name and Title */}
           <h2 className="text-2xl md:text-2xl font-semibold text-blue-950">
             Ashutosh Kumar
