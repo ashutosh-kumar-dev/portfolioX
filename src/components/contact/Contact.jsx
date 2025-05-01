@@ -13,10 +13,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_geh0o3j",      // Replace with your actual service ID
-        "template_d0r741m",     // Replace with your actual template ID
+        import.meta.env.VITE_MAIL_SERVICE,      // Replace with your actual service ID
+        import.meta.env.VITE_MAIL_TEMPLATE,     // Replace with your actual template ID
         form.current,
-        "QqzclkcmLe6t4YDQQ"       // Replace with your actual public key
+        import.meta.env.VITE_MAIL_KEY       // Replace with your actual public key
       )
       .then(
         (result) => {
