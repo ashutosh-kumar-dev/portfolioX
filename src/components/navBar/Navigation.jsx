@@ -56,12 +56,12 @@ const Navigation = () => {
                 {/*active bubble lower shade */}
                 <span className="w-3.5 h-3.5 bg-transparent absolute 
                   top-4 left-[-18px] rounded-tr-[6px] shadow-myShadow1
-                  lg:top-auto lg:top-[1.126rem] lg:left-auto lg:right-[-18px] lg:rounded-bl-[8px] lg:shadow-myShadow4">
+                  lg:top-auto lg:bottom-6 lg:left-auto lg:right-[-18px] lg:rounded-bl-[8px] lg:shadow-myShadow4">
                 </span>
 
                 <span className="w-3.5 h-3.5 bg-transparent absolute 
                   top-4 right-[-18px] rounded-tl-[6px] shadow-myShadow2
-                  lg:top-auto lg:top-[1.126rem] lg:right-auto lg:left-[-18px] lg:rounded-br-[8px] lg:shadow-myShadow3">
+                  lg:top-auto lg:bottom-6 lg:right-auto lg:left-[-18px] lg:rounded-br-[8px] lg:shadow-myShadow3">
                 </span>
 
                 {React.createElement(Menus[active].icon, { className: "text-white text-2xl ml-4 mt-4" })}
