@@ -6,7 +6,7 @@ import myImage from "../../assets/pic1.jpg"; // adjust the path if needed
 const projects = [
   {
     id: 1,
-    image: myImage,
+    image: "https://api.microlink.io/?url=https%3A%2F%2Ffood-delivery-ecommerce-app.netlify.app%2F&screenshot=true&embed=screenshot.url",
     github: "https://github.com/example/project1",
     live: "https://example.com/project1",
     name: "Project 1",
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     id: 2,
-    image: myImage,
+    image: "https://api.microlink.io/?url=https%3A%2F%2Femart-v3.netlify.app%2F&screenshot=true&embed=screenshot.url",
     github: "https://github.com/example/project2",
     live: "https://example.com/project2",
     name: "Project 2",
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     id: 3,
-    image: myImage,
+    image: "https://api.microlink.io/?url=https%3A%2F%2Fashutosh-kr-v1.netlify.app%2F&screenshot=true&embed=screenshot.url",
     github: "https://github.com/example/project1",
     live: "https://example.com/project1",
     name: "Project 3",
@@ -40,13 +40,14 @@ const projects = [
 
 export default function Project() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-32 py-10 ">
       {projects.map((project) => (
         <div key={project.id} className="relative rounded-2xl overflow-hidden shadow-lg group">
           <div className="aspect-[5/3] overflow-hidden">
             <img
               src={project.image}
               alt={project.name}
+              onError={(e) => (e.currentTarget.src = myImage)}
               className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
             />
           </div>

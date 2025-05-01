@@ -10,6 +10,7 @@ import {
 import { Typography, Box, Paper, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { WorkOutlineOutlined, CheckCircle } from "@mui/icons-material";
 
+
 export default function TimelineExperience() {
   
 
@@ -25,6 +26,7 @@ export default function TimelineExperience() {
 
 
   return (
+    <div className="pb-10">
     <Box
       sx={{
         maxWidth: 900,
@@ -32,7 +34,6 @@ export default function TimelineExperience() {
         mx: "auto",
         p: 3,
         bgcolor: "#000",
-        minHeight: "100vh",
       }}
     >
       <Timeline position="alternate" sx={{ py: 3 }}>
@@ -45,7 +46,7 @@ export default function TimelineExperience() {
             <TimelineConnector sx={{ bgcolor: "#444" }} />
           </TimelineSeparator>
           <TimelineContent>
-            <Typography variant="h5" fontWeight="bold" color="#ddd" align="center">
+            <Typography variant="h5" fontWeight="bold" color="#ddd" align="center" sx={{ml:-10, pt:1.5}}>
               Experience
             </Typography>
           </TimelineContent>
@@ -83,7 +84,7 @@ export default function TimelineExperience() {
                 Opentext Corporation
               </Typography>
               <Typography variant="subtitle2" color="#bbb">
-                2022 - Present
+                2024 - Present
               </Typography>
               <List sx={{ mt: 1 }}>
                 {[
@@ -119,7 +120,7 @@ export default function TimelineExperience() {
         </TimelineItem>
 
         {/* Second Chat Bubble - Right */}
-        <TimelineItem sx={{ minHeight: 160 }}>
+        {/* <TimelineItem sx={{ minHeight: 160 }}>
           <TimelineSeparator>
             <TimelineDot sx={{ bgcolor: "#e74c3c", p: 1.5 }} />
             <TimelineConnector sx={{ bgcolor: "#444" }} />
@@ -183,8 +184,12 @@ export default function TimelineExperience() {
               </List>
             </Paper>
           </TimelineContent>
-        </TimelineItem>
+        </TimelineItem> */}
       </Timeline>
+
     </Box>
+
+      
+    </div>
   );
 }

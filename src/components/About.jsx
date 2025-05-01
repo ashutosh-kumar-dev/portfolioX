@@ -8,13 +8,13 @@ import "./about/About.css"
 const About = () => {
   return (
   
-      <div className="about-page w-full min-h-screen flex flex-col items-center justify-center bg-black py-10 px-6 space-y-8">
+      <div className="about-page w-full min-h-screen flex flex-col items-center justify-center bg-black pb-24 py-10 px-6 space-y-8">
   
     {/* Layout Container */}
     <div className="w-full max-w-6xl flex flex-col lg:flex-row items-start justify-center gap-10 ">
   
       {/* Profile Card */}
-      <div className=" lg:block lg:w-[350px] sticky pt-20 top-24 self-start">
+      <div className=" lg:block lg:w-[350px] sticky pt-20 top-24 self-start sm:ml-40">
         <ProfileCard />
       </div>
   

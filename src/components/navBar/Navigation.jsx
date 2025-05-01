@@ -46,7 +46,7 @@ const Navigation = () => {
     
         {/* Right side: navbar */}
         <div className="fixed w-full lg:w-[35%] flex flex-col justify-end z-50 bottom-0 left-0 top-auto lg:right-0 lg:top-0 lg:bottom-auto lg:left-auto">
-          <div className="bg-white h-[4.4rem] px-6 rounded-t-xl rounded-b-xl">
+          <div className="bg-white h-[4.4rem] px-6 border-t-[5px] border-black lg:border-t-0 lg:border-b-[5px] rounded-t-xl rounded-b-xl">
             <ul className="flex flex-col relative ">
               {/* Active Bubble */}
               <span
@@ -55,13 +55,13 @@ const Navigation = () => {
               >
                 {/*active bubble lower shade */}
                 <span className="w-3.5 h-3.5 bg-transparent absolute 
-                  top-4 left-[-18px] rounded-tr-[11px] shadow-myShadow1 
-                  lg:top-auto lg:bottom-4 lg:left-auto lg:right-[-18px] lg:rounded-bl-[11px] lg:shadow-myShadow4">
+                  top-4 left-[-18px] rounded-tr-[6px] shadow-myShadow1
+                  lg:top-auto lg:top-[18px] lg:left-auto lg:right-[-18px] lg:rounded-bl-[8px] lg:shadow-myShadow4">
                 </span>
 
                 <span className="w-3.5 h-3.5 bg-transparent absolute 
-                  top-4 right-[-18px] rounded-tl-[11px] shadow-myShadow2 
-                  lg:top-auto lg:bottom-4 lg:right-auto lg:left-[-18px] lg:rounded-br-[11px] lg:shadow-myShadow3">
+                  top-4 right-[-18px] rounded-tl-[6px] shadow-myShadow2
+                  lg:top-auto lg:top-[18px] lg:right-auto lg:left-[-18px] lg:rounded-br-[8px] lg:shadow-myShadow3">
                 </span>
 
                 {React.createElement(Menus[active].icon, { className: "text-white text-2xl ml-4 mt-4" })}

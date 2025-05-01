@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-100 to-white px-6 py-12 flex flex-col items-center justify-center">
+    <section className="min-h-screen bg-black px-6 py-12 flex flex-col items-center justify-center mb-10">
       <ToastContainer position="top-right" autoClose={3000} />
 
       <motion.div
@@ -39,8 +39,8 @@ const Contact = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-10"
       >
-        <h1 className="text-4xl font-bold mb-2 text-slate-800">Contact Me</h1>
-        <p className="text-slate-600 max-w-md mx-auto">
+        <h1 className="text-4xl font-bold mb-2 text-white">Contact Me</h1>
+        <p className="text-slate-400 max-w-md mx-auto">
           Have a question, idea or just want to say hi? Feel free to drop a message!
         </p>
       </motion.div>
@@ -95,7 +95,7 @@ const Contact = () => {
 
         <button
           type="submit"
-          className="w-full flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 rounded-xl transition duration-300"
+          className="w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-sky-600 text-white font-semibold py-3 rounded-xl transition duration-300"
         >
           <Send size={20} /> Send Message
         </button>
@@ -107,18 +107,16 @@ const Contact = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <a href="mailto:youremail@example.com" className="text-sky-500 hover:text-sky-700">
+        <a href="mailto:${import.meta.env.VITE_EMAIL_URL}" className="text-sky-500 hover:text-sky-700">
           <Mail size={28} />
         </a>
-        <a href="https://github.com/yourgithub" target="_blank" rel="noreferrer" className="text-slate-700 hover:text-black">
+        <a href={import.meta.env.VITE_GITHUB_URL} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-slate-700">
           <Github size={28} />
         </a>
-        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noreferrer" className="text-sky-700 hover:text-sky-900">
+        <a href={import.meta.env.VITE_LINKEDIN_URL} target="_blank" rel="noreferrer" className="text-blue-500 hover:text-blue-700">
           <Linkedin size={28} />
         </a>
-        <a href="tel:+1234567890" className="text-green-600 hover:text-green-800">
-          <Phone size={28} />
-        </a>
+        
       </motion.div>
     </section>
   );
