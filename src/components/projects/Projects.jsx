@@ -2,31 +2,34 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 import myImage from "../../assets/pic1.jpg"; // adjust the path if needed
+import oldPortfolio from "../../assets/oldPortfolio.PNG"
+import tastyTreat from "../../assets/tastyTreat.PNG"; // adjust the path if needed
+import emart from "../../assets/emart.PNG";
 
 const projects = [
   {
     id: 1,
-    image: "https://api.microlink.io/?url=https%3A%2F%2Ffood-delivery-ecommerce-app.netlify.app%2F&screenshot=true&embed=screenshot.url",
+    image: tastyTreat,
     github: "https://github.com/example/project1",
     live: "https://example.com/project1",
-    name: "Project 1",
-    about: "Web Development",
+    name: "TastTreat",
+    about: "Food Ordering and Delivery",
   },
   {
     id: 2,
-    image: "https://api.microlink.io/?url=https%3A%2F%2Femart-v3.netlify.app%2F&screenshot=true&embed=screenshot.url",
+    image: oldPortfolio,
     github: "https://github.com/example/project2",
     live: "https://example.com/project2",
-    name: "Project 2",
-    about: "UI/UX Design",
+    name: "Protfolio",
+    about: "Plain HTML CSS Javascript",
   },
   {
     id: 3,
-    image: "https://api.microlink.io/?url=https%3A%2F%2Fashutosh-kr-v1.netlify.app%2F&screenshot=true&embed=screenshot.url",
+    image: emart,
     github: "https://github.com/example/project1",
     live: "https://example.com/project1",
-    name: "Project 3",
-    about: "Mobile App Development",
+    name: "EMart",
+    about: "Ecommerce",
   },
   {
     id: 4,

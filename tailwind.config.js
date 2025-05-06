@@ -17,7 +17,7 @@ module.exports = {
 
       },
       screens: {
-        'xxxs': '480px', //custom 480px breakpoint!
+        'xs': '400px', //custom 400px breakpoint!
       },
       animation: {
         pullRope: 'pullRope 2s ease-out forwards',

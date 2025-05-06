@@ -8,10 +8,10 @@ import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
 
 const Navigation = () => {
   const Menus = [
-    { name: "About", path: "/about", icon: PersonOutlineIcon, dis: "translate-x-[0px] sm:translate-x-[65px] md:translate-x-[80px] lg:translate-x-[10px] xl:translate-x-[15px] " },
-    { name: "Resume", path: "/resume", icon: ViewTimelineOutlinedIcon, dis: "translate-x-[65px] sm:translate-x-[195px] md:translate-x-[230px] lg:translate-x-[80px] xl:translate-x-[100px]" },
-    { name: "Projects", path: "/projects", icon: FolderZipOutlinedIcon, dis: "translate-x-[135px] sm:translate-x-[325px] md:translate-x-[370px] lg:translate-x-[155px] xl:translate-x-[180px]" },
-    { name: "Contact", path: "/contact", icon: ContactMailOutlinedIcon, dis: "translate-x-[200px] sm:translate-x-[455px] md:translate-x-[515px] lg:translate-x-[230px] xl:translate-x-[260px]" },
+    { name: "About", path: "/about", icon: PersonOutlineIcon, dis: "translate-x-[0px] xs:translate-x-[25px] sm:translate-x-[65px] md:translate-x-[80px] lg:translate-x-[10px] xl:translate-x-[15px] " },
+    { name: "Resume", path: "/resume", icon: ViewTimelineOutlinedIcon, dis: "translate-x-[65px] xs:translate-x-[115px] sm:translate-x-[195px] md:translate-x-[230px] lg:translate-x-[80px] xl:translate-x-[100px]" },
+    { name: "Projects", path: "/projects", icon: FolderZipOutlinedIcon, dis: "translate-x-[135px] xs:translate-x-[205px] sm:translate-x-[325px] md:translate-x-[370px] lg:translate-x-[155px] xl:translate-x-[180px]" },
+    { name: "Contact", path: "/contact", icon: ContactMailOutlinedIcon, dis: "translate-x-[200px] xs:translate-x-[290px] sm:translate-x-[455px] md:translate-x-[515px] lg:translate-x-[230px] xl:translate-x-[260px]" },
   ];
   const navigate = useNavigate();
   const [active, setActive] = useState(0);
@@ -70,7 +70,7 @@ const Navigation = () => {
               {/* Menu Buttons */}
               <div className=" overflow-hidden flex mb-50">
                 {Menus.map((menu, i) => (
-                  <li key={i} className="w-16 sm:ml-16 md:ml-20 lg:ml-2 xl:ml-4">
+                  <li key={i} className="w-16 xs:ml-6 sm:ml-16 md:ml-20 lg:ml-2 xl:ml-4">
                     <button
                       className="flex flex-col text-center pt-4 focus:outline-none"
                       onClick={(e) => showTabs(e, menu, i)}
