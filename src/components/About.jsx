@@ -14,7 +14,7 @@ const About = () => {
     <div className="w-full max-w-6xl flex flex-col lg:flex-row items-start justify-center gap-10 ">
   
       {/* Profile Card */}
-      <div className=" lg:block lg:w-[350px] sticky pt-20 top-24 self-start sm:ml-40">
+      <div className=" lg:block lg:w-[350px] sticky pt-20 top-24 self-start sm:ml-40 xs:ml-2 xm:ml-70">
         <ProfileCard />
       </div>
   

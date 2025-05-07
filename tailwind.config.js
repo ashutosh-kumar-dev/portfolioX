@@ -18,6 +18,7 @@ module.exports = {
       },
       screens: {
         'xs': '400px', //custom 400px breakpoint!
+        'xm': '940px',
       },
       animation: {
         pullRope: 'pullRope 2s ease-out forwards',
@@ -32,6 +33,9 @@ module.exports = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
         }
+      },
+      spacing: {
+        70: "17.5rem", // Add custom spacing value (adjust as needed)
       },
     },
   },

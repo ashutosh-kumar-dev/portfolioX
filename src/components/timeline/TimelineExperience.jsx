@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Timeline,
   TimelineItem,
@@ -9,11 +9,14 @@ import {
 } from "@mui/lab";
 import { Typography, Box, Paper, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { WorkOutlineOutlined, CheckCircle } from "@mui/icons-material";
-
+import { GoArrowRight } from "react-icons/go";
 
 export default function TimelineExperience() {
-  
+  const [showDetails, setShowDetails] = useState(false);
 
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
 
   const makeTextBold = (text, boldWords) => {
     const regex = new RegExp(`(${boldWords.join("|")})`, "gi"); // Match full words or phrases
@@ -58,7 +61,13 @@ export default function TimelineExperience() {
             <TimelineDot sx={{ bgcolor: "#3498db", p: 1.5 }} />
             <TimelineConnector sx={{ bgcolor: "#444" }} />
           </TimelineSeparator>
-          <TimelineContent sx={{ display: "flex", justifyContent: "flex-start" }}>
+          <TimelineContent
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              flexDirection: { xs: "column", sm: "row" },
+            }}
+          >
             <Paper
               elevation={3}
               sx={{
@@ -86,35 +95,77 @@ export default function TimelineExperience() {
               <Typography variant="subtitle2" color="#bbb">
                 2024 - Present
               </Typography>
-              <List sx={{ mt: 1 }}>
-                {[
-                  {
-                    text: "Created and implemented REST APIs, enhancing integration in the FILR product.",
-                    boldWords: ["REST APIs", "FILR product"],
-                  },
-                  {
-                    text: "Discovered and documented critical bugs, improving product stability.",
-                    boldWords: ["critical bugs"],
-                  },
-                  {
-                    text: "Learned about user authentication and permissions management via LDAP and Active Directory.",
-                    boldWords: ["user authentication", "permissions management", "LDAP", "Active Directory"],
-                  },
-                ].map((item, index) => (
-                  <ListItem key={index} sx={{ alignItems: "flex-start", gap: "4px", p: 0 }}>
-                    <ListItemIcon sx={{ minWidth: 24, mt:2 }}>
-                      <CheckCircle sx={{ color: "#4CAF50", fontSize: 15 }} />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={
-                        <Typography variant="body2" sx={{ whiteSpace: "normal", wordWrap: "break-word", lineHeight: 1.3 }}>
-                           {makeTextBold(item.text, item.boldWords)}
-                        </Typography>
-                      }
-                    />
-                  </ListItem>
-                ))}
-              </List>
+
+              {/* Read More Button for xs screens */}
+              <div className="mt-3">
+                <button
+                  className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition flex items-center gap-2 group"
+                  onClick={toggleDetails}
+                >
+                  {showDetails ? "Close" : "Read More"}
+                  <GoArrowRight className="transition-transform duration-300 transform group-hover:-rotate-45 text-xl" />
+                </button>
+              </div>
+
+              {/* Floating Box for Details */}
+              {showDetails && (
+                <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+                  <div className="bg-gray-800 text-white p-6 rounded-lg max-w-md w-full relative">
+                    <button
+                      className="absolute top-2 right-2 text-gray-400 hover:text-white"
+                      onClick={toggleDetails}
+                    >
+                      ✕
+                    </button>
+                    <List sx={{ mt: 1 }}>
+                      {[
+                        {
+                          text: "Created and implemented REST APIs, enhancing integration in the FILR product.",
+                          boldWords: ["REST APIs", "FILR product"],
+                        },
+                        {
+                          text: "Discovered and documented critical bugs, improving product stability.",
+                          boldWords: ["critical bugs"],
+                        },
+                        {
+                          text: "Learned about user authentication and permissions management via LDAP and Active Directory.",
+                          boldWords: [
+                            "user authentication",
+                            "permissions management",
+                            "LDAP",
+                            "Active Directory",
+                          ],
+                        },
+                      ].map((item, index) => (
+                        <ListItem
+                          key={index}
+                          sx={{ alignItems: "flex-start", gap: "4px", p: 0 }}
+                        >
+                          <ListItemIcon sx={{ minWidth: 24, mt: 2 }}>
+                            <CheckCircle
+                              sx={{ color: "#4CAF50", fontSize: 15 }}
+                            />
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={
+                              <Typography
+                                variant="body2"
+                                sx={{
+                                  whiteSpace: "normal",
+                                  wordWrap: "break-word",
+                                  lineHeight: 1.3,
+                                }}
+                              >
+                                {makeTextBold(item.text, item.boldWords)}
+                              </Typography>
+                            }
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </div>
+                </div>
+              )}
             </Paper>
           </TimelineContent>
         </TimelineItem>

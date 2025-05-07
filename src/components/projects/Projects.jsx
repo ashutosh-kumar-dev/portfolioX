@@ -20,22 +20,22 @@ const projects = [
     image: oldPortfolio,
     github: "https://github.com/example/project2",
     live: "https://example.com/project2",
-    name: "Protfolio",
+    name: "Portfolio", // Fixed spelling
     about: "Plain HTML CSS Javascript",
   },
   {
     id: 3,
     image: emart,
-    github: "https://github.com/example/project1",
-    live: "https://example.com/project1",
+    github: "https://github.com/example/project3", // Updated link
+    live: "https://example.com/project3", // Updated link
     name: "EMart",
     about: "Ecommerce",
   },
   {
     id: 4,
     image: myImage,
-    github: "https://github.com/example/project2",
-    live: "https://example.com/project2",
+    github: "https://github.com/example/project4", // Updated link
+    live: "https://example.com/project4", // Updated link
     name: "Project 4",
     about: "Full-stack Development",
   },
