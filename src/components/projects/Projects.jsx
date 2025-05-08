@@ -43,7 +43,7 @@ const projects = [
 
 export default function Project() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-[10%] py-10 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-[10%] py-10 pb-20">
       {projects.map((project) => (
         <div key={project.id} className="relative rounded-2xl overflow-hidden shadow-lg group">
           <div className="aspect-[5/3] overflow-hidden">
