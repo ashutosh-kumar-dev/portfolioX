@@ -1,14 +1,6 @@
 import React, { useState } from "react";
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineDot,
-  TimelineConnector,
-  TimelineContent,
-} from "@mui/lab";
 import { Typography, Box, Paper, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
-import { WorkOutlineOutlined, CheckCircle } from "@mui/icons-material";
+import { CheckCircle } from "@mui/icons-material";
 import { GoArrowRight } from "react-icons/go";
 
 export default function TimelineExperience() {
@@ -25,53 +17,56 @@ export default function TimelineExperience() {
     );
   };
 
+  const timelineData = [
+    {
+      title: "Opentext Corp.",
+      subtitle: "2024 - Present",
+      details: [
+        {
+          text: "Created and implemented REST APIs, enhancing integration in the FILR product.",
+          boldWords: ["REST APIs", "FILR product"],
+        },
+        {
+          text: "Discovered and documented critical bugs, improving product stability.",
+          boldWords: ["critical bugs"],
+        },
+        {
+          text: "Learned about user authentication and permissions management via LDAP and Active Directory.",
+          boldWords: ["user authentication", "permissions management", "LDAP", "Active Directory"],
+        },
+      ],
+    },
+    
+    // Add more timeline items here if needed
+  ];
+
   return (
-    <div className="pb-10">
+    <div className="pb-10 mx-[10%] sm:mx-[15%] md:mx-[20%] lg:mx-[25%]">
       <Box
         sx={{
           maxWidth: 900,
-          width: "90vw",
+          width: "auto",
           mx: "auto",
           p: 3,
           bgcolor: "#000",
         }}
       >
-        <Timeline position="left" sx={{ py: 3, }}>
-          {/* Experience Heading */}
-          <TimelineItem sx={{ minHeight: 100 }}>
-            <TimelineSeparator>
-              <TimelineDot sx={{ backgroundColor: "#666", p: 1.5 }}>
-                <WorkOutlineOutlined sx={{ color: "#fff", fontSize: 24 }} />
-              </TimelineDot>
-              <TimelineConnector sx={{ bgcolor: "#444" }} />
-            </TimelineSeparator>
-            <TimelineContent>
-              <Typography
-                variant="h5"
-                fontWeight="bold"
-                color="#ddd"
-                align="center"
-                sx={{ ml: -10, pt: 1.5 }}
-              >
-                Experience
-              </Typography>
-            </TimelineContent>
-          </TimelineItem>
+        <div className="relative flex flex-col gap-10">
+          {/* Vertical Line */}
+          <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-blue-500"></div>
 
-          {/* First Chat Bubble - Left */}
-          <TimelineItem sx={{ minHeight: 160 }}>
-            <TimelineSeparator>
-              <TimelineDot sx={{ bgcolor: "#3498db", p: 1.5 }} />
-              <TimelineConnector sx={{ bgcolor: "#444" }} />
-            </TimelineSeparator>
-            <TimelineContent>
+          {timelineData.map((item, index) => (
+            <div key={index} className="relative flex items-start gap-4">
+              {/* Timeline Dot */}
+              <div className="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full"></div>
+
+              {/* Timeline Content */}
               <Paper
                 elevation={3}
                 sx={{
-                 
                   p: { xs: 2, sm: 3.5 },
                   borderRadius: 2,
-                  width: { xs: 150, sm: 250 },
+                  width: { xs: "100%", sm: 250 },
                   bgcolor: "#333",
                   color: "#fff",
                   maxWidth: 500,
@@ -79,12 +74,11 @@ export default function TimelineExperience() {
                   "&::before": {
                     content: '""',
                     position: "absolute",
-                    top: "50%",
-                    right: "-12px",
-                    transform: "translateY(-50%)",
+                    top: "20px", // Adjust the position of the arrow
+                    left: "-12px", // Position the arrow on the left side
                     borderStyle: "solid",
-                    borderWidth: "12px 0 12px 12px",
-                    borderColor: "transparent transparent transparent #333",
+                    borderWidth: "12px 12px 12px 0",
+                    borderColor: "transparent #333 transparent transparent",
                   },
                 }}
               >
@@ -94,20 +88,20 @@ export default function TimelineExperience() {
                   color="#fff"
                   fontSize={{ xs: "1rem", sm: "1.25rem" }}
                 >
-                  Opentext Corp
+                  {item.title}
                 </Typography>
                 <Typography
                   variant="subtitle2"
                   color="#bbb"
                   fontSize={{ xs: "0.75rem", sm: "0.875rem" }}
                 >
-                  2024 - Present
+                  {item.subtitle}
                 </Typography>
 
                 {/* Read More Button */}
                 <div className="mt-3">
                   <button
-                    className="bg-blue-500 text-white px-3 py-1.5 text-[10px] xs:ml-4 xs:py-[2px] sm:px-4 sm:py-2 sm:ml-12 sm:text-base rounded-md hover:bg-blue-600 transition flex items-center gap-2 group"
+                    className="bg-blue-500 text-white px-3 py-1.5 text-[10px] xs:ml-0 xs:py-[2px] sm:px-4 sm:py-2 sm:ml-0 sm:text-base rounded-md hover:bg-blue-600 transition flex items-center gap-2 group"
                     onClick={toggleDetails}
                   >
                     {showDetails ? "Close" : "Read More"}
@@ -126,27 +120,9 @@ export default function TimelineExperience() {
                         ✕
                       </button>
                       <List sx={{ mt: 1 }}>
-                        {[
-                          {
-                            text: "Created and implemented REST APIs, enhancing integration in the FILR product.",
-                            boldWords: ["REST APIs", "FILR product"],
-                          },
-                          {
-                            text: "Discovered and documented critical bugs, improving product stability.",
-                            boldWords: ["critical bugs"],
-                          },
-                          {
-                            text: "Learned about user authentication and permissions management via LDAP and Active Directory.",
-                            boldWords: [
-                              "user authentication",
-                              "permissions management",
-                              "LDAP",
-                              "Active Directory",
-                            ],
-                          },
-                        ].map((item, index) => (
+                        {item.details.map((detail, detailIndex) => (
                           <ListItem
-                            key={index}
+                            key={detailIndex}
                             sx={{ alignItems: "flex-start", gap: "4px", p: 0 }}
                           >
                             <ListItemIcon sx={{ minWidth: 24, mt: 2 }}>
@@ -164,7 +140,7 @@ export default function TimelineExperience() {
                                     lineHeight: 1.3,
                                   }}
                                 >
-                                  {makeTextBold(item.text, item.boldWords)}
+                                  {makeTextBold(detail.text, detail.boldWords)}
                                 </Typography>
                               }
                             />
@@ -175,80 +151,10 @@ export default function TimelineExperience() {
                   </div>
                 )}
               </Paper>
-            </TimelineContent>
-          </TimelineItem>
-
-          {/* Second Chat Bubble - Right */}
-          {/* <TimelineItem sx={{ minHeight: 160 }}>
-          <TimelineSeparator>
-            <TimelineDot sx={{ bgcolor: "#e74c3c", p: 1.5 }} />
-            <TimelineConnector sx={{ bgcolor: "#444" }} />
-          </TimelineSeparator>
-          <TimelineContent sx={{ display: "flex", justifyContent: "flex-end" }}>
-            <Paper
-              elevation={3}
-              sx={{
-                p: 3.5,
-                borderRadius: 2,
-                bgcolor: "#222",
-                color: "#fff",
-                maxWidth: 500,
-                position: "relative",
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  top: "50%",
-                  left: "-12px",
-                  transform: "translateY(-50%)",
-                  borderStyle: "solid",
-                  borderWidth: "12px 12px 12px 0",
-                  borderColor: "transparent #222 transparent transparent",
-                },
-              }}
-            >
-              <Typography variant="h6" fontWeight="bold" color="#fff">
-                Another Company
-              </Typography>
-              <Typography variant="subtitle2" color="#bbb">
-                2020 - 2022
-              </Typography>
-              <List sx={{ mt: 1 }}>
-                {[
-                  {
-                    text: "Worked on microservices architecture to build scalable backend solutions.",
-                    boldWords: ["microservices architecture", "scalable backend solutions"],
-                  },
-                  {
-                    text: "Integrated third-party APIs and optimized system performance.",
-                    boldWords: ["third-party APIs", "optimized system performance"],
-                  },
-                  {
-                    text: "Led a team to refactor legacy code for better maintainability.",
-                    boldWords: ["refactor legacy code", "maintainability"],
-                  },
-                ].map((item, index) => (
-                  <ListItem key={index} sx={{ alignItems: "flex-start", gap: "4px", p: 0 }}>
-                    <ListItemIcon sx={{ minWidth: 24, mt:2 }}>
-                      <CheckCircle sx={{ color: "#4CAF50", fontSize: 15 }} />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={
-                        <Typography variant="body2" sx={{ whiteSpace: "normal", wordWrap: "break-word", lineHeight: 1.3 }}>
-                           {makeTextBold(item.text, item.boldWords)}
-                        </Typography>
-                      }
-                    />
-                  </ListItem>
-                ))}
-              </List>
-            </Paper>
-          </TimelineContent>
-        </TimelineItem> */}
-      
-      </Timeline>
-    </Box>
-
-      
+            </div>
+          ))}
+        </div>
+      </Box>
     </div>
   );
 }

@@ -43,7 +43,7 @@ const projects = [
 
 export default function Project() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-32 py-10 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-[10%] py-10 ">
       {projects.map((project) => (
         <div key={project.id} className="relative rounded-2xl overflow-hidden shadow-lg group">
           <div className="aspect-[5/3] overflow-hidden">
@@ -54,7 +54,7 @@ export default function Project() {
               className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
             />
           </div>
-          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+          <div className=" absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
             <a
               href={project.github}
               target="_blank"
