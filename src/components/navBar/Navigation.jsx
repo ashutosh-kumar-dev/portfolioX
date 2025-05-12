@@ -51,9 +51,9 @@ const Navigation = () => {
               {/* Active Bubble */}
               <span
                 className={`bg-blue-700 duration-500 ${Menus[active].dis} border-4 border-black h-16 w-16 absolute
-                             bottom-auto -top-5 md:-top-5 md:bottom-auto lg:top-auto lg:-bottom-6 rounded-full`}
+                             bottom-auto -top-5 md:-top-5 md:bottom-auto lg:top-auto lg:-bottom-6 rounded-full transition-transform ease-in-out`}
               >
-                {/*active bubble lower shade */}
+                {/* Active bubble lower shade */}
                 <span className="w-3.5 h-3.5 bg-transparent absolute 
                   top-4 left-[-18px] rounded-tr-[6px] shadow-myShadow1
                   lg:top-auto lg:bottom-6 lg:left-auto lg:right-[-18px] lg:rounded-bl-[8px] lg:shadow-myShadow4">
@@ -64,7 +64,7 @@ const Navigation = () => {
                   lg:top-auto lg:bottom-6 lg:right-auto lg:left-[-18px] lg:rounded-br-[8px] lg:shadow-myShadow3">
                 </span>
 
-                {React.createElement(Menus[active].icon, { className: "text-white text-2xl ml-4 mt-4" })}
+                {React.createElement(Menus[active].icon, { className: "text-white text-2xl ml-4 mt-4 transition-transform duration-500 ease-in-out" })}
               </span>
     
               {/* Menu Buttons */}
