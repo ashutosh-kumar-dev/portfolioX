@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route} from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Navigation from "./components/navBar/Navigation";
-// import Navigation from "../saved_templates/Navigation";
 import ProfileCard from "./components/profileCard/ProfileCard";
 import LeetCodeHeatmap  from "./components/about/LeetCodeHeatmap";
 import About from "./components/About";
@@ -19,8 +19,7 @@ function App() {
       <div className="">
         <Navigation />
       </div>
-
-
+      <ScrollToTop />
       {/* Scrollable Content */}
       <div className="mt-[4.4rem]  ">
         <PageRoutes />
